@@ -21,13 +21,13 @@ jobs:
       run: dotnet restore
       
     - name: Build
-      run: dotnet build -c Release --sc -f net8.0
+      run: dotnet publish -p:PublishProfile=default
 
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: ./bin/Release/net8.0/JASM.exe
+        asset_path: ./build/JASM.exe
         asset_name: jasm.exe
         asset_content_type: application/octet-stream
         github_token: ${{ secrets.GITHUB_TOKEN }}
