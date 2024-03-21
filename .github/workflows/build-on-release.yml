@@ -21,7 +21,7 @@ jobs:
       run: dotnet restore
       
     - name: Build
-      run: dotnet build --no-restore -c Release --sc -f net8.0 -r win-x64
+      run: dotnet build --no-restore -c Release --sc -f net8.0
 
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
